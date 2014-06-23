@@ -355,8 +355,32 @@
 
 
 				<section>
-					<h2>Scheduler!!</h2>
+
+					<section>
+						<h2>Scheduler</h2>
+
+						<ul class="spaced">
+							<li class="fragment">Web Audio Timing ist primitiv</li>
+							<li class="fragment">Spur-Playback mittels eigenem Scheduler</li>
+							<li class="fragment">Spuren und Stücke in Editor Node Graph</li>
+						</ul>
+
+						<img src="images/Scheduler_Example.svg" width="800">
+					</section>
+
+					<section>
+
+						<h2>Scheduler-Anforderungen</h2>
+
+						<ul class="spaced">
+							<li class="fragment">Effizient (Performance)</li>
+							<li class="fragment">Exakt (keine Teile auslassen)</li>
+							<li class="fragment">Intelligent (Offsets)</li>
+						</ul>
+
+					</section>
 				</section>
+
 
 
 				<section>
@@ -365,10 +389,9 @@
 						<h2>Kollaboration</h2>
 
 						<ul class="spaced">
-							<li class="fragment">Remote band brainstorming</li>
-							<li class="fragment">Easier melody brainstorming</li>
-							<li class="fragment">Auto-save and auto-backup</li>
-							<li class="fragment">sadly not offline...</li>
+							<li class="fragment">Fern-Brainstorming</li>
+							<li class="fragment">Melodie-Kollaboration</li>
+							<li class="fragment">Auto-save und Auto-Backup</li>
 						</ul>
 
 					</section>
@@ -377,10 +400,10 @@
 						<h2>Locking</h2>
 
 						<ul class="spaced">
-							<li class="fragment">First thought: simple, lock all the things!</li>
-							<li class="fragment">Hinders creative process</li>
-							<li class="fragment">Frustrating</li>
-							<li class="fragment">Inconsistency problems</li>
+							<li class="fragment">Entitäten bei Bearbeitung sperren</li>
+							<li class="fragment">Hält kreativen Prozess auf</li>
+							<li class="fragment">Frustriert</li>
+							<li class="fragment">Inkonsistenz bei Paketverlust</li>
 						</ul>
 					</section>
 
@@ -395,10 +418,10 @@
 						<h2>Operational Transformation</h2>
 
 						<ul class="spaced">
-							<li class="fragment">De-facto standard (Google Drive, SubEthaEdit...)</li>
-							<li class="fragment">Lots of research</li>
-							<li class="fragment"><a href="http://sharejs.org/">ShareJS</a> <3 </li>
-							<li class="fragment">uber-complicated, many edge-cases</li>
+							<li class="fragment">De-facto Standard (Google Drive, SubEthaEdit...)</li>
+							<li class="fragment">Viel Forschung</li>
+							<li class="fragment">Sehr kompliziert, viele Ausnahmefälle</li>
+							<li class="fragment">Anpassung für JSON notwendig</li>
 						</ul>
 
 					</section>
@@ -414,34 +437,33 @@
 						<h2>Differential Synchronization</h2>
 
 						<ul class="spaced">
-							<li class="fragment">Much simpler* and solves many edge-cases</li>
-							<li class="fragment">Less features</li>
-							<li class="fragment">Works like a charm with Angular.JS (for me™)</li>
-							<li class="fragment">Almost no custom code in Controllers needed</li>
+							<li class="fragment">Ring-Synchronisierung</li>
+							<li class="fragment">Konsistent bei Paketverlust (Versionierung)</li>
+							<li class="fragment">Diff/Patch JSON</li>
+							<li class="fragment">Gut geeignet für AngularJS</li>
 						</ul>
 
+					</section>
+
+					<section>
+						<h2>Differential Synchronization (Implementierung)</h2>
+
+						<ul class="spaced">
+							<li class="fragment">Eigenes Protokoll auf Websockets</li>
+							<li class="fragment">Unabhängiges Modul im Frontend</li>
+							<li class="fragment">Erste JS Implementierung</li>
+							<li class="fragment">Push-Integration</li>
+						</ul>
 					</section>
 
 				</section>
 
 				<section>
-					<h2>There's so much more</h2>
-
-					<ul class="spaced">
-						<li class="fragment">Smart scheduling algorithm</li>
-						<li class="fragment">Arrangement export</li>
-						<li class="fragment">Custom synchronization protocol</li>
-						<li class="fragment">More that did not fit into 20 minutes</li>
-					</ul>
+					<a href="http://127.0.0.1:3000"><h1>Demonstration</h1></a>
 				</section>
 
 				<section>
-					<h1>THX so much for your attention!</h1>
-
-					<p><a href="http://cl.ly/1H111o1w1Z0T">Read my thesis to dive deeper into the topics</a></p>
-					<p><a href="https://github.com/janmonschke">Source code for editor will soon be released</a></p>
-					<p><a href="https://www.youtube.com/watch?v=S2Hp_1jqpY8">Check out Differential Synchronization</a></p>
-
+					<h1>Vielen Dank für Ihre Aufmerksamkeit!</h1>
 				</section>
 
 			</div>
