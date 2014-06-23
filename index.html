@@ -6,7 +6,7 @@
 
 		<title>Building a collaborative audio editor based on the Web Audio API</title>
 
-		<meta name="description" content="Building a collaborative audio editor based on the Web Audio API - a presentation held at scotland.js 2014">
+		<meta name="description" content="Building a collaborative audio editor based on the Web Audio API - Kolloquium">
 		<meta name="author" content="Jan Monschke">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,8 +32,6 @@
 	</head>
 
 	<body>
-
-		<div id="sjshashtag">#sjsJan</div>
 		<div id="source-info"></div>
 
 		<div class="reveal">
@@ -43,28 +41,12 @@
 				<section>
 					<h1>Building a collaborative audio editor based on the Web Audio API</h1>
 					<hr />
-					<h3>Scotland.js 2014</h3>
-
+					<h3>Kolloquium</h3>
+					<h4>Jan Monschke</h4>
 				</section>
 
 				<section>
-					<h2>Me: Jan Monschke</h2>
-
-					<p><a href="https://twitter.com/thedeftone">@thedeftone</a>, <a href="http://janmonschke.com">janmonschke.com</a></p>
-					<p>Frontend Developer from Berlin</p>
-					<div class="fragment">
-						<p>Not really a musical background but</p>
-						<p>passionate about music</p>
-					</div>
-
-					<aside class="notes">
-						<p>motivation: learning new things (audio essentials), experiment</p>
-					</aside>
-
-				</section>
-
-				<section>
-					<h2>Audio on the Web</h2>
+					<h2>Audio im Web</h2>
 
 					<ul class="spaced">
 						<li class="fragment"><code>bgsound</code></li>
@@ -87,11 +69,11 @@
 					<h2>Web Audio API</h2>
 
 					<ul class="spaced">
-						<li class="fragment">low-level access to all things audio</li>
-						<li class="fragment">create sounds</li>
-						<li class="fragment">manipulate sounds (filters)</li>
-						<li class="fragment">timing sounds precisely</li>
-						<li class="fragment">tons of other cool stuff (spatial audio, audio analysis)</li>
+						<li class="fragment">low-level Audio Kontrolle (Buffer)</li>
+						<li class="fragment">Tonerzeugung (Oszillator)</li>
+						<li class="fragment">Tonmanipulation (Filter)</li>
+						<li class="fragment">Präzsises Timing</li>
+						<li class="fragment">Audio-Analyse, räumliche Sounds...</li>
 					</ul>
 
 					<aside class="notes">
@@ -104,13 +86,17 @@
 				</section>
 
 				<section>
+					<h2>Experimente &rarr; Tools</h2>
+				</section>
+
+				<section>
 					<section>
-						<h2>Analyzing audio editors</h2>
+						<h2>DAW Analyse</h2>
 
 						<ul class="spaced">
-							<li class="fragment">years of development and best practices</li>
-							<li class="fragment">common interface patterns</li>
-							<li class="fragment">minimum feature sets</li>
+							<li class="fragment">Viele Best Practices</li>
+							<li class="fragment">Interface Patterns</li>
+							<li class="fragment">Minimalumfang</li>
 						</ul>
 
 						<aside class="notes">
@@ -148,13 +134,13 @@
 					</section>
 
 					<section>
-						<h2>Analyzing audio editors</h2>
+						<h2>DAW</h2>
 
 						<ul class="spaced">
-							<li class="fragment">timeline (left to right)</li>
-							<li class="fragment">previews, depending on content</li>
-							<li class="fragment">tracks as rows</li>
-							<li class="fragment">recording, importing, drums, synth</li>
+							<li class="fragment">Timeline (links nach rechts)</li>
+							<li class="fragment">Vorschau (waveform, patterns)</li>
+							<li class="fragment">Spuren als Zeilen</li>
+							<li class="fragment">Aufnehmen, Importieren, Drums, Synthesizer</li>
 						</ul>
 
 						<aside class="notes">
@@ -180,28 +166,28 @@
 				<section>
 
 					<section>
-						<h2>Recording</h2>
+						<h2>Aufnahme</h2>
 
 						<ul class="spaced">
-							<li class="fragment">Record audio</li>
-							<li class="fragment">Get live audio feedback for adjustments</li>
-							<li class="fragment">Upload recordings to server</li>
-							<li class="fragment">Select parts of audio</li>
-							<li class="fragment">Import audio files</li>
+							<li class="fragment">Audiosignal aufnehmen</li>
+							<li class="fragment">Visualisierung des Signals</li>
+							<li class="fragment">Ausschnitte auswählen</li>
+							<li class="fragment">Aufnahmen hochladen</li>
+							<li class="fragment">Dateien importieren</li>
 						</ul>
 
 
 					</section>
 
 					<section>
-						<h2>Recording Screenshot</h2>
+						<h2>Aufnahme (Screenshot)</h2>
 
 						<img src="images/recording-a-signal.png" width="600">
 
 					</section>
 
 					<section>
-						<h2>Recording Node Graph</h2>
+						<h2>Aufnahme (Node Graph)</h2>
 
 						<img src="images/Recording.png" width="700" />
 
@@ -220,16 +206,16 @@
 						<h2>Drums</h2>
 
 						<ul class="spaced">
-							<li class="fragment">Full control over speed and sounds</li>
-							<li class="fragment">Complex and varying drum loops</li>
-							<li class="fragment">Different drum sets</li>
-							<li class="fragment">Exact (!!!) timing</li>
+							<li class="fragment">Kontrolle über Geschwindigkeit und Beats</li>
+							<li class="fragment">Komplexe Drum Loops</li>
+							<li class="fragment">Verschiedene Töne</li>
+							<li class="fragment">Exaktes Timing!</li>
 						</ul>
 
 					</section>
 
 					<section>
-						<h2>Drums Screenshot</h2>
+						<h2>Drums (Screenshot)</h2>
 
 						<img src="images/drum-edit.png">
 
@@ -240,9 +226,9 @@
 
 
 						<ul class="spaced">
-							<li class="fragment">No <code>setTimeout/setInterval</code></li>
-							<li class="fragment">Imagine a Joey Jordison based on JS-timing...oh my...</li>
-							<li class="fragment">Own timing system in Web Audio API</li>
+							<li class="fragment"><del>setTimeout/setInterval</del></li>
+							<li class="fragment">Eigenes Zeitsystem in der Web Audio API</li>
+							<li class="fragment">Timing in eigenem Thread</li>
 						</ul>
 
 						<pre class="fragment"><code>  var node = context.createBufferSource();
@@ -273,12 +259,12 @@
 					</section>
 
 					<section>
-						<h2>Oscillators</h2>
+						<h2>Oszillator</h2>
 						<img src="images/sinewave.gif" data-source="http://televandalist.com/post/49335582926/61-hertz-sine-wave-tone-at-60fps">
 					</section>
 
 					<section>
-					<h2>Oscillators</h2>
+					<h2>Oszillator</h2>
 
 					<div>
 						<input type="range" id="oscRange" value="200" min="0" max="2000" />
@@ -337,7 +323,7 @@
 				</script>
 
 					<section>
-						<h2>Synthesizer Node Graph</h2>
+						<h2>Synthesizer (Node Graph)</h2>
 
 						<img src="images/SynthesizerNodeGraph.png" width="900" />
 
@@ -349,7 +335,7 @@
 					</section>
 
 					<section>
-						<h2>Envelope</h2>
+						<h2>Envelope / Hüllkurve</h2>
 
 						<img src="images/ADSR_parameter.png" width="800" />
 
@@ -368,11 +354,27 @@
 				</section>
 
 
+				<section>
+					<h2>Scheduler!!</h2>
+				</section>
+
 
 				<section>
 
 					<section>
-						<h2>Collaboration</h2>
+						<h2>Kollaboration</h2>
+
+						<ul class="spaced">
+							<li class="fragment">Remote band brainstorming</li>
+							<li class="fragment">Easier melody brainstorming</li>
+							<li class="fragment">Auto-save and auto-backup</li>
+							<li class="fragment">sadly not offline...</li>
+						</ul>
+
+					</section>
+
+					<section>
+						<h2>Locking</h2>
 
 						<ul class="spaced">
 							<li class="fragment">First thought: simple, lock all the things!</li>
@@ -380,7 +382,6 @@
 							<li class="fragment">Frustrating</li>
 							<li class="fragment">Inconsistency problems</li>
 						</ul>
-
 					</section>
 
 					<section>
@@ -417,18 +418,6 @@
 							<li class="fragment">Less features</li>
 							<li class="fragment">Works like a charm with Angular.JS (for me™)</li>
 							<li class="fragment">Almost no custom code in Controllers needed</li>
-						</ul>
-
-					</section>
-
-					<section>
-						<h2>Why collaboration?</h2>
-
-						<ul class="spaced">
-							<li class="fragment">Remote band brainstorming</li>
-							<li class="fragment">Easier melody brainstorming</li>
-							<li class="fragment">Auto-save and auto-backup</li>
-							<li class="fragment">sadly not offline...</li>
 						</ul>
 
 					</section>
@@ -526,17 +515,6 @@
 
 		</script>
 
-		<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-19046336-4']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
 
 	</body>
 </html>
